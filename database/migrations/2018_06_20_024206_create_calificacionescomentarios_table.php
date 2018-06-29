@@ -15,8 +15,8 @@ class CreateCalificacionescomentariosTable extends Migration
     {
         Schema::create('calificacionescomentarios', function (Blueprint $table) {
             $table->increments('id_calificacion_comentario');
-            $table->integer('calificacion');
-            $table->string('comentario');
+            $table->integer('calificacion')->nullable();
+            $table->string('comentario')->nullable();
             $table->unsignedInteger('id_autor');
 			$table->unsignedInteger('id_destinatario');
 			$table->unsignedInteger('id_practica');
