@@ -17,9 +17,13 @@ class CreateCalificacionescomentariosTable extends Migration
             $table->increments('id_calificacion_comentario');
             $table->integer('calificacion');
             $table->string('comentario');
-            $table->unsignedInteger('id_persona');
+            $table->unsignedInteger('id_autor');
+			$table->unsignedInteger('id_destinatario');
+			$table->unsignedInteger('id_practica');
 
-            $table->foreign('id_persona')->references('id_persona')->on('personas');
+            $table->foreign('id_autor')->references('id_persona')->on('personas');
+			$table->foreign('id_destinatario')->references('id_persona')->on('personas');
+			$table->foreign('id_practica')->references('id_practica')->on('practicas');
 
             $table->timestamps();
         });
